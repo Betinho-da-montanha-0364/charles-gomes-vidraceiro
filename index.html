@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Charles Gomes, vidraceiro</title>
+<meta name="description" content="Charles Gomes, vidraceiro. Esquadrias de alumínio, box de banheiro, espelhos com LED, portas e divisórias de vidro, com instalação e conserto. Peça o orçamento pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#f4f7f8; --surface:#ffffff; --fg:#10202a; --muted:#4d606b; --line:#d3dde2;
+  --glass:#1d7f7a; --btn-bg:#10202a; --btn-fg:#ffffff; --wa:#0f7d42; --ph:#dfe8ec;
+  --font:'Plus Jakarta Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0d1519;--surface:#141f25;--fg:#e9f0f3;--muted:#9aaeb8;--line:#26363e;--glass:#5cc6bf;--btn-bg:#e9f0f3;--btn-fg:#0d1519;--wa:#1fa35c;--ph:#1b2a31;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0d1519;--surface:#141f25;--fg:#e9f0f3;--muted:#9aaeb8;--line:#26363e;--glass:#5cc6bf;--btn-bg:#e9f0f3;--btn-fg:#0d1519;--wa:#1fa35c;--ph:#1b2a31;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:1.0625rem;line-height:1.65}
+.wrap{max-width:66rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--font);margin:0;letter-spacing:-.025em;line-height:1.08}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--glass);outline-offset:3px}
+
+.btn{display:inline-block;padding:.85rem 1.5rem;border:2px solid var(--fg);text-decoration:none;font-weight:600;border-radius:10px}
+.btn.main{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.small{padding:.55rem 1.1rem;font-size:.95rem}
+.btn:hover{filter:brightness(1.1)}
+
+/* barra de cima */
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0}
+.top b{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+
+/* abertura */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(112deg,transparent 0 56%,color-mix(in srgb,var(--glass) 11%,transparent) 56% 64%,transparent 64% 70%,color-mix(in srgb,var(--glass) 7%,transparent) 70% 73%,transparent 73%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center;padding-top:2rem;padding-bottom:5rem}
+.hero h1{font-weight:800;font-size:clamp(2.5rem,6.4vw,4.6rem);margin-bottom:1.3rem}
+.hero p{margin:0 0 2rem;max-width:34rem;color:var(--muted);font-size:1.15rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero .wrap>div:first-child h1,.hero .wrap>div:first-child p,.hero .btns .btn{text-transform:uppercase}
+.hero .wrap>div:first-child p{letter-spacing:.01em}
+.hero .wrap>div:first-child p.reply{margin:1.1rem 0 0;font-size:1rem;color:var(--fg);text-transform:none;letter-spacing:0;display:flex;align-items:center;gap:.6rem;max-width:none}
+.reply::before{content:"";width:.7rem;height:.7rem;border-radius:50%;background:var(--wa);flex:none}
+
+.portrait{margin:0 1rem 1.5rem 0}
+.pic{position:relative}
+.pic::before{content:"";position:absolute;inset:1rem -1rem -1rem 1rem;border:2px solid var(--glass);border-radius:14px}
+.pic img{position:relative;display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--ph)}
+.portrait figcaption{margin-top:1.6rem;font-weight:700;font-size:1.1rem}
+.portrait figcaption span{display:block;font-weight:400;font-size:.95rem;color:var(--muted)}
+
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+section h2{font-weight:800;font-size:clamp(1.9rem,4.4vw,2.8rem);margin-bottom:.8rem}
+.lead{color:var(--muted);margin:0 0 2.2rem;max-width:40rem}
+
+/* serviços com imagem */
+.cards{display:grid;gap:1.5rem;grid-template-columns:repeat(2,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card img,.fix img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--ph)}
+.card div{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.card h3{font-weight:700;font-size:1.3rem}
+.card p{margin:0;color:var(--muted)}
+.card a{margin-top:auto;padding-top:.6rem;font-weight:600;color:var(--glass);text-underline-offset:3px}
+
+.more-title{font-weight:700;font-size:1.25rem;margin:3rem 0 .4rem}
+.more{list-style:none;margin:0;padding:0;display:grid;gap:0 3rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.more li{padding:1rem 0;border-top:1px solid var(--line)}
+.more strong{display:block;font-weight:600}
+.more span{display:block;color:var(--muted);font-size:.98rem;margin-bottom:.3rem}
+.more a{font-weight:600;font-size:.95rem;color:var(--glass);text-underline-offset:3px}
+
+
+/* galeria */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.chip{font:inherit;font-size:.95rem;font-weight:600;padding:.5rem 1rem;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:2rem;cursor:pointer}
+.chip.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.gal{columns:3 15rem;column-gap:.8rem}
+.ph{display:block;width:100%;margin:0 0 .8rem;padding:0;border:0;background:var(--ph);border-radius:12px;overflow:hidden;cursor:zoom-in;break-inside:avoid}
+.ph[hidden]{display:none}
+.ph img{display:block;width:100%;height:auto;transition:transform .3s}
+.ph:hover img{transform:scale(1.03)}
+.cta{margin-top:2rem}
+#lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;color:#fff}
+#lb::backdrop{background:rgba(5,10,13,.92)}
+#lb[open]{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem}
+#lb img{max-width:min(92vw,70rem);max-height:80vh;object-fit:contain;border-radius:8px}
+#lb p{margin:0;font-size:.95rem;opacity:.85;padding:0 1rem;text-align:center}
+#lb button{position:absolute;font:inherit;color:#fff;background:rgba(255,255,255,.14);border:0;border-radius:50%;width:3rem;height:3rem;font-size:1.8rem;line-height:1;cursor:pointer}
+#lb .x{top:1rem;right:1rem}.pv{left:.6rem;top:50%}.nx{right:.6rem;top:50%}
+
+/* conserto */
+.fix{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center}
+.fix img{border-radius:16px}
+.fix ul{margin:0 0 1.8rem;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.5rem}
+.fix li{position:relative;padding-left:1.5rem}
+.fix li::before{content:"";position:absolute;left:0;top:.8em;width:.8rem;border-top:2px solid var(--glass)}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.steps li{padding-top:1rem;border-top:2px solid var(--line)}
+.steps b{font-weight:800;font-size:2.2rem;color:var(--glass);display:block;line-height:1}
+.steps p{margin:.5rem 0 0;max-width:28ch}
+
+.faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--glass);font-size:1.5rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:.6rem 0 0;color:var(--muted);max-width:42rem}
+
+dl{margin:0 0 2rem;display:grid;grid-template-columns:max-content 1fr;gap:.6rem 1.8rem}
+dt{color:var(--muted)} dd{margin:0}
+footer{padding:2rem 0 6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+footer p{margin:0 0 .3rem}
+.fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:5;padding:.8rem 1.2rem;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;border-radius:2rem;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+
+@media (max-width:800px){
+  .hero .wrap{grid-template-columns:1fr;gap:2.5rem;padding-bottom:3.5rem}
+  .portrait{max-width:380px}
+  .cards,.fix,.fix ul{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap" style="display:block;padding-bottom:0">
+    <div class="top">
+      <b>Charles Gomes · Vidraceiro</b>
+    </div>
+  </div>
+  <div class="wrap">
+    <div>
+      <h1>Charles Gomes, vidraceiro</h1>
+      <p>Vidro, alumínio e espelho na medida do seu espaço. Janelas, portas, box, divisórias, espelhos com LED e fechamento de varanda, com instalação e conserto. Mande uma foto do local pelo WhatsApp.</p>
+      <div class="btns">
+        <a class="btn main" data-wa href="https://wa.me/5500000000000">Pedir orçamento pelo WhatsApp</a>
+        <a class="btn" href="#servicos">Ver serviços</a>
+      </div>
+      <p class="reply">Chamou no WhatsApp? Logo você será atendido.</p>
+    </div>
+    <figure class="portrait">
+      <div class="pic"><img src="charles.jpg" alt="Charles Gomes, vidraceiro, de camisa preta"></div>
+      <figcaption>Charles Gomes<span>Atendimento direto pelo WhatsApp</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section id="servicos"><div class="wrap">
+  <h2>O que fazemos</h2>
+  <p class="lead">Toque em “Pedir orçamento” no serviço que você precisa e a conversa já abre no WhatsApp.</p>
+  <div class="cards">
+<article class="card"><img src="img/30.jpg" width="1100" height="619" alt="Porta de correr de quatro folhas em alumínio preto" loading="lazy"><div><h3>Portas e janelas de alumínio</h3><p>Correr, maxim-ar, pivotante e veneziana, em alumínio preto ou branco com vidro.</p><a data-wa data-msg="Quero orçamento de porta ou janela de alumínio e vidro." href="#">Pedir orçamento</a></div></article>
+<article class="card"><img src="img/05.jpg" width="825" height="1100" alt="Box de banheiro em vidro com canto em L" loading="lazy"><div><h3>Box de banheiro</h3><p>Vidro temperado de correr ou em canto, com perfil e ferragem na cor que combina com o banheiro.</p><a data-wa data-msg="Quero orçamento de box de banheiro." href="#">Pedir orçamento</a></div></article>
+<article class="card"><img src="img/44.jpg" width="825" height="1100" alt="Espelho redondo com LED e moldura dourada" loading="lazy"><div><h3>Espelhos sob medida</h3><p>Redondo, oval, orgânico e de parede inteira, com moldura e luz de LED.</p><a data-wa data-msg="Quero orçamento de espelho." href="#">Pedir orçamento</a></div></article>
+<article class="card"><img src="img/04.jpg" width="618" height="1100" alt="Sala de reunião com divisória de vidro e moldura preta" loading="lazy"><div><h3>Divisórias e salas de escritório</h3><p>Vidro com perfil preto para separar ambientes sem perder a luz.</p><a data-wa data-msg="Quero orçamento de divisória de vidro." href="#">Pedir orçamento</a></div></article>
+<article class="card"><img src="img/34.jpg" width="619" height="1100" alt="Porta de vidro jateado com desenho" loading="lazy"><div><h3>Portas de vidro</h3><p>Vidro liso, jateado ou verde, com puxador longo, de correr ou pivotante.</p><a data-wa data-msg="Quero orçamento de porta de vidro." href="#">Pedir orçamento</a></div></article>
+<article class="card"><img src="img/32.jpg" width="1100" height="619" alt="Varanda fechada com vidro" loading="lazy"><div><h3>Varandas e sacadas</h3><p>Fechamento de sacada com vidro de várias folhas e guarda-corpo.</p><a data-wa data-msg="Quero orçamento de fechamento de varanda." href="#">Pedir orçamento</a></div></article>
+  </div>
+
+  <h3 class="more-title">Também fazemos</h3>
+  <ul class="more">
+    <li><strong>Guarda-corpo de vidro</strong><span>Para varandas, escadas e áreas externas.</span><a data-wa data-msg="Quero orçamento de guarda-corpo de vidro." href="#">Pedir orçamento</a></li>
+    <li><strong>Vitrines e fachadas de loja</strong><span>Vidro grande para comércio e academias.</span><a data-wa data-msg="Quero orçamento de vitrine ou fachada de vidro." href="#">Pedir orçamento</a></li>
+    <li><strong>Prateleiras de vidro</strong><span>Vidro temperado com bordas polidas.</span><a data-wa data-msg="Quero orçamento de prateleira de vidro." href="#">Pedir orçamento</a></li>
+  </ul>
+</div></section>
+
+<section id="trabalhos"><div class="wrap">
+  <h2>Trabalhos feitos</h2>
+  <p class="lead">Obras reais do Charles. Toque numa foto para ampliar e use os filtros para ver só o que você procura.</p>
+  <div class="chips" role="group" aria-label="Filtrar trabalhos"><button class="chip on" data-f="all">Todos</button><button class="chip" data-f="esq">Janelas e esquadrias</button><button class="chip" data-f="sac">Varandas e guarda-corpo</button><button class="chip" data-f="div">Divisórias</button><button class="chip" data-f="esp">Espelhos</button><button class="chip" data-f="box">Box de banheiro</button><button class="chip" data-f="por">Portas</button><button class="chip" data-f="com">Lojas</button></div>
+  <div class="gal" id="gal">
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho redondo com LED e moldura dourada"><img src="img/44.jpg" width="825" height="1100" alt="Espelho redondo com LED e moldura dourada" loading="lazy"></button>
+<button class="ph" data-c="box" aria-label="Ampliar: Box de banheiro em vidro com canto em L"><img src="img/05.jpg" width="825" height="1100" alt="Box de banheiro em vidro com canto em L" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Porta de correr de quatro folhas em alumínio preto"><img src="img/30.jpg" width="1100" height="619" alt="Porta de correr de quatro folhas em alumínio preto" loading="lazy"></button>
+<button class="ph" data-c="sac" aria-label="Ampliar: Varanda fechada com vidro"><img src="img/32.jpg" width="1100" height="619" alt="Varanda fechada com vidro" loading="lazy"></button>
+<button class="ph" data-c="div" aria-label="Ampliar: Sala de reunião com divisória de vidro e moldura preta"><img src="img/04.jpg" width="618" height="1100" alt="Sala de reunião com divisória de vidro e moldura preta" loading="lazy"></button>
+<button class="ph" data-c="por" aria-label="Ampliar: Porta de vidro jateado com desenho"><img src="img/34.jpg" width="619" height="1100" alt="Porta de vidro jateado com desenho" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho redondo com LED em banheiro"><img src="img/43.jpg" width="825" height="1100" alt="Espelho redondo com LED em banheiro" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janela de alumínio preto em fachada"><img src="img/23.jpg" width="618" height="1100" alt="Janela de alumínio preto em fachada" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelhos em formato de cápsula com moldura preta"><img src="img/09.jpg" width="825" height="1100" alt="Espelhos em formato de cápsula com moldura preta" loading="lazy"></button>
+<button class="ph" data-c="sac" aria-label="Ampliar: Fechamento de varanda em vidro de várias folhas"><img src="img/52.jpg" width="825" height="1100" alt="Fechamento de varanda em vidro de várias folhas" loading="lazy"></button>
+<button class="ph" data-c="div" aria-label="Ampliar: Escritório com divisórias de vidro"><img src="img/15.jpg" width="1100" height="619" alt="Escritório com divisórias de vidro" loading="lazy"></button>
+<button class="ph" data-c="por" aria-label="Ampliar: Porta de vidro verde"><img src="img/36.jpg" width="619" height="1100" alt="Porta de vidro verde" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho orgânico com moldura preta"><img src="img/27.jpg" width="619" height="1100" alt="Espelho orgânico com moldura preta" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janela maxim-ar em alumínio preto"><img src="img/06.jpg" width="1100" height="618" alt="Janela maxim-ar em alumínio preto" loading="lazy"></button>
+<button class="ph" data-c="box" aria-label="Ampliar: Box de vidro de correr"><img src="img/25.jpg" width="619" height="1100" alt="Box de vidro de correr" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Porta de correr grande em alumínio preto"><img src="img/31.jpg" width="619" height="1100" alt="Porta de correr grande em alumínio preto" loading="lazy"></button>
+<button class="ph" data-c="sac" aria-label="Ampliar: Guarda-corpo de vidro em varanda"><img src="img/13.jpg" width="1100" height="825" alt="Guarda-corpo de vidro em varanda" loading="lazy"></button>
+<button class="ph" data-c="div" aria-label="Ampliar: Divisória de vidro em sala de escritório"><img src="img/24.jpg" width="1040" height="780" alt="Divisória de vidro em sala de escritório" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho oval com moldura de couro"><img src="img/56.jpg" width="1100" height="825" alt="Espelho oval com moldura de couro" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janela de correr com vidro verde"><img src="img/22.jpg" width="1100" height="619" alt="Janela de correr com vidro verde" loading="lazy"></button>
+<button class="ph" data-c="box" aria-label="Ampliar: Box de vidro em canto"><img src="img/35.jpg" width="878" height="1100" alt="Box de vidro em canto" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janela de correr de quatro folhas"><img src="img/40.jpg" width="1100" height="718" alt="Janela de correr de quatro folhas" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho com topo arredondado"><img src="img/53.jpg" width="825" height="1100" alt="Espelho com topo arredondado" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Veneziana de alumínio preto"><img src="img/48.jpg" width="1100" height="618" alt="Veneziana de alumínio preto" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelhos na parede inteira de um estúdio"><img src="img/08.jpg" width="1100" height="619" alt="Espelhos na parede inteira de um estúdio" loading="lazy"></button>
+<button class="ph" data-c="por" aria-label="Ampliar: Porta de vidro jateado"><img src="img/38.jpg" width="878" height="1100" alt="Porta de vidro jateado" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho com iluminação em LED vertical"><img src="img/20.jpg" width="619" height="1100" alt="Espelho com iluminação em LED vertical" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janela baixa de alumínio preto"><img src="img/46.jpg" width="1100" height="618" alt="Janela baixa de alumínio preto" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janela de vidro com moldura preta"><img src="img/16.jpg" width="1100" height="618" alt="Janela de vidro com moldura preta" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Casa com janelas de vidro de correr"><img src="img/49.jpg" width="1100" height="483" alt="Casa com janelas de vidro de correr" loading="lazy"></button>
+<button class="ph" data-c="sac" aria-label="Ampliar: Varanda fechada com vidro escuro"><img src="img/10.jpg" width="1100" height="726" alt="Varanda fechada com vidro escuro" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelhos em parede longa de estúdio de pilates"><img src="img/33.jpg" width="1100" height="619" alt="Espelhos em parede longa de estúdio de pilates" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho oval com LED"><img src="img/54.jpg" width="532" height="1100" alt="Espelho oval com LED" loading="lazy"></button>
+<button class="ph" data-c="por" aria-label="Ampliar: Porta de correr vermelha"><img src="img/18.jpg" width="619" height="1100" alt="Porta de correr vermelha" loading="lazy"></button>
+<button class="ph" data-c="por" aria-label="Ampliar: Porta pivotante de alumínio preto"><img src="img/37.jpg" width="618" height="1100" alt="Porta pivotante de alumínio preto" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janelas de correr em fachada"><img src="img/55.jpg" width="1100" height="470" alt="Janelas de correr em fachada" loading="lazy"></button>
+<button class="ph" data-c="esq" aria-label="Ampliar: Janelas de correr em casa de fazenda"><img src="img/14.jpg" width="1100" height="495" alt="Janelas de correr em casa de fazenda" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho com vidro canelado e borda dourada"><img src="img/01.jpg" width="618" height="1100" alt="Espelho com vidro canelado e borda dourada" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho com borda dourada"><img src="img/42.jpg" width="618" height="1100" alt="Espelho com borda dourada" loading="lazy"></button>
+<button class="ph" data-c="esp" aria-label="Ampliar: Espelho em formato de gota"><img src="img/51.jpg" width="618" height="1100" alt="Espelho em formato de gota" loading="lazy"></button>
+<button class="ph" data-c="com" aria-label="Ampliar: Fachada de loja em vidro"><img src="img/00.jpg" width="1100" height="825" alt="Fachada de loja em vidro" loading="lazy"></button>
+<button class="ph" data-c="com" aria-label="Ampliar: Fachada de academia em vidro"><img src="img/41.jpg" width="1100" height="825" alt="Fachada de academia em vidro" loading="lazy"></button>
+  </div>
+  <div class="cta"><a class="btn main" data-wa data-msg="Vi os trabalhos no site e quero um orçamento." href="#">Quero um trabalho assim</a></div>
+</div></section>
+
+<dialog id="lb" aria-label="Foto ampliada"><button class="x" aria-label="Fechar">×</button><button class="nv pv" aria-label="Foto anterior">‹</button><img alt=""><button class="nv nx" aria-label="Próxima foto">›</button><p></p></dialog>
+
+<section id="conserto"><div class="wrap">
+  <div class="fix">
+    <img src="img/22.jpg" width="1100" height="619" alt="Janela de correr com vidro verde" loading="lazy">
+    <div>
+      <h2>Algo no vidro deu problema?</h2>
+      <p class="lead" style="margin-bottom:1.4rem">Também fazemos manutenção, sem precisar trocar tudo. Uma foto ou um vídeo curto do problema já ajuda.</p>
+      <ul>
+        <li>Porta de vidro pesada ou desalinhada</li>
+        <li>Box travando ou saindo do trilho</li>
+        <li>Janela difícil de abrir e fechar</li>
+        <li>Mola de piso desregulada</li>
+        <li>Porta batendo forte</li>
+        <li>Roldanas gastas ou barulhentas</li>
+      </ul>
+      <a class="btn main" data-wa data-msg="Preciso de um conserto. Vou enviar uma foto." href="https://wa.me/5500000000000">Enviar foto pelo WhatsApp</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="como-funciona"><div class="wrap">
+  <h2>Como pedir seu orçamento</h2>
+  <ol class="steps">
+    <li><b>1</b><p>Chame no WhatsApp e conte o que precisa. Se puder, mande uma foto do local.</p></li>
+    <li><b>2</b><p>Combinamos a medição no local, para o vidro ser cortado na medida certa.</p></li>
+    <li><b>3</b><p>Você recebe o preço e o prazo antes de começar.</p></li>
+    <li><b>4</b><p>Fazemos a instalação e deixamos o local limpo.</p></li>
+  </ol>
+</div></section>
+
+<section id="duvidas" class="faq"><div class="wrap">
+  <h2>Perguntas frequentes</h2>
+  <details><summary>Posso pedir orçamento só com foto?</summary><p>Pode. A foto dá uma ideia inicial. O valor final é confirmado depois da medição no local.</p></details>
+  <details><summary>Qual o prazo de entrega?</summary><p>Depende do serviço. O prazo vem junto com o orçamento, antes de você fechar.</p></details>
+  <details><summary>Vocês fazem conserto ou só instalação nova?</summary><p>Fazemos os dois: regulagem de portas e molas, troca de roldanas, ajuste de box e janelas.</p></details>
+  <details><summary>Vocês fazem espelho com LED?</summary><p>Sim. Fazemos espelhos sob medida com iluminação em LED, em modelos orgânico, retangular e arredondado.</p></details>
+  <details><summary>O vidro tem garantia?</summary><p>Sim. Vidro e instalação têm garantia, e os termos são combinados no orçamento.</p></details>
+</div></section>
+
+<section id="contato"><div class="wrap">
+  <h2>Onde nos encontrar</h2>
+  <dl>
+    <dt>WhatsApp</dt><dd>(34) 99873-3227<br><small>Mandou mensagem, logo você será atendido.</small></dd>
+    <dt>Horário</dt><dd>Segunda a sexta, das 08:00 às 18:00</dd>
+  </dl>
+  <a class="btn main" data-wa href="https://wa.me/5500000000000">Pedir orçamento pelo WhatsApp</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>© 2026 Charles Gomes, vidraceiro. Todos os direitos reservados.</p></div></footer>
+<a class="fab" data-wa href="https://wa.me/5500000000000">WhatsApp</a>
+
+<script>
+// Troque pelo número real, com 55 + DDD + número. Exemplo: "5564912345678"
+var WHATSAPP = "5534998733227";
+document.querySelectorAll("[data-wa]").forEach(function (a) {
+  var txt = "Olá Charles! " + (a.getAttribute("data-msg") || "Quero um orçamento de vidro.");
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt);
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+var items=[].slice.call(document.querySelectorAll(".ph")),lb=document.getElementById("lb"),cur=0;
+document.querySelectorAll(".chip").forEach(function(c){c.addEventListener("click",function(){
+  document.querySelectorAll(".chip").forEach(function(x){x.classList.toggle("on",x===c)});
+  var f=c.getAttribute("data-f");items.forEach(function(p){p.hidden=!(f==="all"||p.getAttribute("data-c")===f)});
+})});
+function vis(){return items.filter(function(p){return !p.hidden})}
+function show(n){var v=vis();if(!v.length)return;cur=(n+v.length)%v.length;var im=v[cur].querySelector("img");
+  lb.querySelector("img").src=im.src;lb.querySelector("img").alt=im.alt;lb.querySelector("p").textContent=im.alt}
+items.forEach(function(p){p.addEventListener("click",function(){show(vis().indexOf(p));if(lb.showModal)lb.showModal();else lb.setAttribute("open","")})});
+lb.querySelector(".x").onclick=function(){lb.close()};
+lb.querySelector(".pv").onclick=function(){show(cur-1)};
+lb.querySelector(".nx").onclick=function(){show(cur+1)};
+lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
+lb.addEventListener("keydown",function(e){if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+</script>
+</body>
+</html>
